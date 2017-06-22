@@ -1,0 +1,18 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-head">
+        <a class="navbar-brand" href="#">Courses web</a>
+    </div>
+        
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="/updateform"><span class="glyphicon glyphicon-user"></span> {{currentUser.lastName}} {{currentUser.firstName}} </a></li>
+          <li><a ><span class="glyphicon glyphicon-briefcase" ></span> {{currentUser.role}} </a></li>
+          <li><a href=" "><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+
+  </div>
+</nav>
+
+<div >
+  <app-search [curUser]="currentUser" ></app-search>
+</div>

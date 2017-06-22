@@ -1,0 +1,65 @@
+<div class="col-md-8 col-md-offset-4">
+  <h2>Update Profile </h2>
+  <form class="form-horizontal" (ngSubmit)="f.form.valid && update()" #f="ngForm" novalidate>
+
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !firstName.valid }">
+      <label class="col-sm-2 control-label">First name</label>
+      <div class="col-xs-4">
+        <input  name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel"
+         class="form-control" required="" autofocus="" type="text" placeholder="Enter First Name">
+         <div *ngIf="f.submitted && !firstName.valid" class="help-block">First Name is required</div>
+      </div>
+    </div>
+
+     <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !lastName.valid }">
+      <label class="col-sm-2 control-label">Last name</label>
+      <div class="col-xs-4">
+        <input class="form-control" required="" autofocus="" type="text"
+        name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel"
+        placeholder="Enter Last Name">
+         <div *ngIf="f.submitted && !lastName.valid" class="help-block">Last Name is required</div>
+      </div>
+    </div>
+
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !nickName.valid }">
+      <label class="col-sm-2 control-label">Nickname</label>
+      <div class="col-xs-4">
+        <input class="form-control" required="" autofocus="" type="text"
+          name="nickName" [(ngModel)]="model.nickName" #nickName="ngModel"
+        placeholder="Enter Nickname">
+      <div *ngIf="f.submitted && !nickName.valid" class="help-block">Nickname is required</div>
+      </div>
+    </div>
+
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !birthday.valid }">
+      <label class="col-sm-2 control-label">Date of Birth</label>
+      <div class="col-xs-4">
+        <input class="form-control" required="" autofocus="" type="date"
+        name="birthday"  [(ngModel)]="model.birthday" #birthday="ngModel">
+        <div *ngIf="f.submitted && !birthday.valid" class="help-block">Date of Birth is required</div>
+      </div>
+    </div>
+
+    <div class="form-group" >
+      <label class="col-sm-2 control-label">Gender</label>
+      <div class="radio" >
+        <label><input value='Male' name="gender"  [(ngModel)]="model.gender" type="radio" >Male</label>
+        <label><input value='Female' name="gender"  [(ngModel)]="model.gender" type="radio" >Female</label>
+      </div>
+
+    </div>
+
+    
+
+
+
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="button" (click)="goBack()();" class="btn btn-default">Cancel</button>
+
+  </form>
+
+
+
+</div>
